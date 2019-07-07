@@ -4,10 +4,10 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Login | Careworks Foundation</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+        <script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+        <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
     </head>
 
     <body>
@@ -17,14 +17,14 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
+                        <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Careworks Foundation</a>
+                    <a class="navbar-brand" href="{{url_for('index')}}">Careworks Foundation</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="{{url_for('signuppage')}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="{{url_for('loginpage')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="panel-body">
                                 <p class="text-warning"><i>Login to take a step towards volunteering</i><p>
-                                <form role="form" action="login_submit.html" method="POST">
+                                <form role="form" action="{{url_for('login')}}" method="POST">
                                     <div class="form-group">
                                         <input type="email" class="form-control"  placeholder="Email" name="e-mail" required>
                                     </div>
@@ -49,7 +49,7 @@
                                     <button type="submit" name="submit" class="btn btn-primary">Login</button><br><br>
                                 </form><br/>
                             </div>
-                            <div class="panel-footer"><p>Don't have an account? <a href="signup.html">Register</a></p></div>
+                            <div class="panel-footer"><p>Don't have an account? <a href="{{url_for('signuppage')}}">Register</a></p></div>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
         <footer>
             <div class="container">
                 <center>
-                    <p>Copyright &copy; Careworks Foundation. All Rights Reserved  |  Contact Us: +91 90000 00000</p>	
+                    <p>Copyright &copy; Careworks Foundation. All Rights Reserved  |  Contact Us: +91 90000 00000</p>
                 </center>
             </div>
         </footer>

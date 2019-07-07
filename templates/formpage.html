@@ -11,15 +11,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <link rel="stylesheet" href="form.css" >
-        <script src="js/form.js"></script>
+        <script src="{{url_for('static',filename='js/form.js')}}"></script>
     </head>
     <body >
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <h2>Contact Us</h2>
-                    <p> Thank you for taking out the time to volunteer with Careworks Foundation! <br> Feedback? Awesome!</p> 
-                
+                    <p> Thank you for taking out the time to volunteer with Careworks Foundation! <br> Feedback? Awesome!</p>
+
                     <form role="form" method="post" id="reused_form" enctype=&quot;multipart/form-data&quot; >
                         <div class="form-group">
                             <label for="name"> Rate your experience out of 5</label>

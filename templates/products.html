@@ -3,10 +3,10 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Volunteer | Careworks Foundation</title>
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <link href="{{url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+        <script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+        <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
         <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
@@ -43,17 +43,17 @@ $(document).ready(function(){
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
+                        <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Careworks Foundation</a>
+                    <a class="navbar-brand" href="{{url_for('index')}}">Careworks Foundation</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href = "login.html"><span class = "glyphicon glyphicon-shopping-cart" {{hide}}></span> Login </a></li>
-                        <li><a href = "signup.html"><span class = "glyphicon glyphicon-shopping-cart" {{hide}}></span> Signup  </a></li>
-                        <li><a href = "cart.html"><span class = "glyphicon glyphicon-user"{{show}}></span> Dashboard </a></li> 
-                        <li><a href = "index.html"><span class = "glyphicon glyphicon-log-in"{{show}}></span> Logout</a></li>
-                        
+                        <li style="display:{{hide}}"><a href = "{{url_for('loginpage')}}"><span class = "glyphicon glyphicon-shopping-cart" {{hide}}></span> Login </a></li>
+                        <li style="display:{{hide}}"><a href = "{{url_for('signuppage')}}"><span class = "glyphicon glyphicon-shopping-cart" {{hide}}></span> Signup  </a></li>
+                        <li style="display:{{show}}"><a href = "{{url_for('dashboard')}}"><span class = "glyphicon glyphicon-user"{{show}}></span> Dashboard </a></li>
+                        <li style="display:{{show}}"><a href = "{{url_for('index')}}"><span class = "glyphicon glyphicon-log-in"{{show}}></span> Logout</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -64,12 +64,12 @@ $(document).ready(function(){
             <!-- Jumbotron Header -->
             <div class="jumbotron home-spacer" id="products-jumbotron">
                 <h3>Careworks Foundation welcomes you</h3>
-                <p>Come and join us help create better lives driven by the belief that educationa and health are the pillars.</p>
+                <p>Come and join us help create better lives driven by the belief that education and health are the pillars.</p>
 
             </div>
             <hr>
                 <div class="container">
-  
+
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Location
                     <span class="caret"></span></button>
@@ -82,58 +82,58 @@ $(document).ready(function(){
                 <li><a href="#">Yelahanka</a></li>
     </ul>
   </div>
-</div>  
+</div>
         <br>
 
             <div class="row text-center" id="cameras">
                 <div class="col-md-3 col-sm-6 home-feature">
                     <div class="thumbnail">
-                        <img src="img/5.jpg" alt="">
+                        <img src="{{url_for('static',filename='img/event1.jpg')}}" alt="">
                         <div class="caption">
-                            <h3>Codeforgood </h3>
-                            <p>Date: </p>
-                            <p>Location: </p>
-                            <p>Volunteers required: </p>
-                            <p><a href="login.html" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
+                            <h3> Painting </h3>
+                            <p>Date: 7th July 2019 </p>
+                            <p>Location: Kormangala, Bangalore </p>
+                            <p>Volunteers required: 10 </p>
+                            <p><a href="{{url_for('untitled')}}" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3 col-sm-6 home-feature">
                     <div class="thumbnail">
-                        <img src="img/2.jpg" alt="">
+                        <img src="{{url_for('static',filename='img/event2.jpg')}}" alt="">
                         <div class="caption">
-                            <h3>Codeforgood </h3>
-                            <p>Date: </p>
-                            <p>Location: </p>
-                            <p>Volunteers required: </p>
-                            <p><a href="login.html" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
+                            <h3> Teaching </h3>
+                            <p>Date: 8th July 2019 </p>
+                            <p>Location: Yelahanka, Bangalore </p>
+                            <p>Volunteers required: 5 </p>
+                            <p><a href="{{url_for('untitled')}}" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3 col-sm-6 home-feature">
                     <div class="thumbnail">
-                        <img src="img/3.jpg" alt="">
+                        <img src="{{url_for('static',filename='img/event3.jpg')}}" alt="">
                         <div class="caption">
-                            <h3>Codeforgood </h3>
-                            <p>Date: </p>
-                            <p>Location: </p>
-                            <p>Volunteers required: </p>
-                            <p><a href="login.html" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
+                            <h3> Cleaning</h3>
+                            <p>Date: 9th July </p>
+                            <p>Location: Mattikeri, Bangalore </p>
+                            <p>Volunteers required: 6</p>
+                            <p><a href="{{url_for('untitled')}}" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3 col-sm-6 home-feature">
                     <div class="thumbnail">
-                        <img src="img/4.jpg" alt="">
+                        <img src="{{url_for('static',filename='img/event4.jpg')}}" alt="">
                         <div class="caption">
-                            <h3>Codeforgood </h3>
-                            <p>Date: </p>
-                            <p>Location: </p>
-                            <p>Volunteers required: </p>
-                            <p><a href="login.html" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
+                            <h3>Wall Painting</h3>
+                            <p>Date: 10th July </p>
+                            <p>Location: Koramangla, Bangalore</p>
+                            <p>Volunteers required:15</p>
+                            <p><a href="{{url_for('loginpage')}}" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
                         </div>
                     </div>
                 </div>
@@ -142,39 +142,39 @@ $(document).ready(function(){
             <div class="row text-center" id="watches">
                 <div class="col-md-3 col-sm-6 home-feature">
                     <div class="thumbnail">
-                        <img src="img/18.jpg" alt="">
+                        <img src="{{url_for('static',filename='img/event1.jpg')}}" alt="">
                         <div class="caption">
-                            <h3>Codeforgood </h3>
-                            <p>Date: </p>
-                            <p>Location: </p>
-                            <p>Volunteers required: </p>
-                            <p><a href="login.html" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
+                            <h3>Painting </h3>
+                            <p>Date: 12th July 2019 </p>
+                            <p>Location: Kormangala, Bangalore </p>
+                            <p>Volunteers required: 10 </p>
+                            <p><a href="{{url_for('untitled')}}" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3 col-sm-6 home-feature">
                     <div class="thumbnail">
-                        <img src="img/19.jpg" alt="">
+                        <img src="{{url_for('static',filename='img/event2.jpg')}}" alt="">
                         <div class="caption">
-                            <h3>Codeforgood </h3>
-                            <p>Date: </p>
-                            <p>Location: </p>
-                            <p>Volunteers required: </p>
-                            <p><a href="login.html" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
+                            <h3>Cleaning</h3>
+                            <p>Date: 19th July </p>
+                            <p>Location: Mattikeri, Bangalore </p>
+                            <p>Volunteers required: 6</p>
+                            <p><a href="{{url_for('untitled')}}" role="button" class="btn btn-primary btn-block">Volunteer now</a></p>
                     </div>
                 </div>
 
-                
 
-            
+
+
             </div>
             <hr>
         </div>
         <footer>
             <div class="container">
                 <center>
-                    <p>Copyright &copy; Lifestyle Store. All Rights Reserved  |  Contact Us: +91 90000 00000</p>	
+                    <p>Copyright &copy; Careworks Foundation. All Rights Reserved  |  Contact Us: +91 90000 00000</p>
                 </center>
             </div>
         </footer>
