@@ -1,17 +1,16 @@
 <!doctype html>
-	<html lang="en"> 
-		<head>
+	<html lang="en"><head>
           
-			<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-			<meta name="description" content>
-			<meta name="keywords" content>
-			<meta name="author" content>
+			<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+			<meta name="description" content="">
+			<meta name="keywords" content="">
+			<meta name="author" content="">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 			<title>Stopwatch</title>
-			<link href="css/bootstrap.min.css" rel="stylesheet"/>
-			<link href="css/bootstrap-responsive.min.css" rel="stylesheet"/>
+			<link href="css/bootstrap.min.css" rel="stylesheet">
+			<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 			<link href="css/font-awesome.css" rel="stylesheet">
-			<link href="css/custom.css" rel="stylesheet"/>
+			<link href="css/custom.css" rel="stylesheet">
           <style>
           body{
   background-image: url("./assets/images/v5.png");
@@ -37,7 +36,8 @@
 							
                           <div class="row">
 								<div id="divStart" class="span4 center">
-									<button id="btnStart" class="btn btn-large btn-block btn-primary" style="font-weight:bold;" data-do="start" type="button">Start</button><br><br>
+									<button id="clo" class="btn btn-large btn-block btn-primary" style="font-weight:bold;" type="button" onclick="getLocation()">Verify Location</button>
+                                  <button id="btnStart" class="btn btn-large btn-block btn-primary" style="font-weight:bold;" data-do="start" type="button" disabled>Start</button><br><br>
 								</div>
 							</div>
 							<div class="row">
@@ -45,15 +45,16 @@
 									<div id="time" class="pointable" style="font-weight:bold; width:100%; display:block;">00:00:00</div>
 								</div>
 							</div>
-							
+							<span id="ck" style="visibility:hidden;">St</span>
 							<div class="row hidden" id="divControls">
 								<div class="span4 center">
 									<div class="row">
-										
-											<button id="btnPause" class="btn btn-large btn-block" type="button">
-												<i class="icon-pause"></i>
+                                      
+										  <button id="clo2" class="btn btn-large btn-block btn-primary" style="font-weight:bold;" type="button" onclick="getLocation()">Verify Location</button>
+											<button id="btnPause"  class="btn btn-large btn-block" type="button">												<i class="icon-pause" ></i>
 												&nbsp;&nbsp;END SESSION
 											</button>
+                                      <h3 id="er"></h3>
 										
 										
 									</div>
@@ -77,7 +78,31 @@
 			<script src="js/bootstrap.min.js"></script>
 			<script src="js/custom.js"></script>
 			<script src="js/jquery.fittext.js"></script>
+            <script>
+          function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
 
+function showPosition(position) {
+  if(document.getElementById("ck").innerHTML=="En")
+    {
+     	document.getElementById("er").innerHTML="Sorry your endlocation did not match the event location your contribution wont be counted"; 
+    } 
+  if(12.9334205<position.coords.latitude<12.9534205)
+{
+  document.getElementById("btnStart").disabled = false;
+  document.getElementById("ck").innerHTML="En";
+}
+  
+}
+
+          
+          </script>
 			<script type="text/javascript">
 			$(document).ready(function(){
 
@@ -203,8 +228,8 @@
 				});
 			});			
 			</script>
-		</body>
-	</html>
+		
+	</body></html>
 
 
 
