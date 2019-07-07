@@ -1,16 +1,27 @@
 <!doctype html>
 	<html lang="en"><head>
+<<<<<<< HEAD:templates/session.html
 
+=======
+          
+>>>>>>> cb8d22ec40053e8e0731cd66472973c34f61495c:HTML TMP/session.html
 			<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 			<meta name="description" content="">
 			<meta name="keywords" content="">
 			<meta name="author" content="">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 			<title>Stopwatch</title>
+<<<<<<< HEAD:templates/session.html
 			<link href="{{url_for('static',filename='css1/bootstrap.min.css')}}" rel="stylesheet">
 			<link href="{{url_for('static',filename='css1/bootstrap-responsive.min.css')}}" rel="stylesheet">
 			<link href="{{url_for('static',filename='css1/font-awesome.css')}}" rel="stylesheet">
 			<link href="{{url_for('static',filename='css1/custom.css')}}" rel="stylesheet">
+=======
+			<link href="css/bootstrap.min.css" rel="stylesheet">
+			<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+			<link href="css/font-awesome.css" rel="stylesheet">
+			<link href="css/custom.css" rel="stylesheet">
+>>>>>>> cb8d22ec40053e8e0731cd66472973c34f61495c:HTML TMP/session.html
           <style>
           body{
   background-image: url("./assets/images/v5.png");
@@ -49,15 +60,25 @@
 							<div class="row hidden" id="divControls">
 								<div class="span4 center">
 									<div class="row">
+<<<<<<< HEAD:templates/session.html
 
+=======
+                                      
+>>>>>>> cb8d22ec40053e8e0731cd66472973c34f61495c:HTML TMP/session.html
 										  <button id="clo2" class="btn btn-large btn-block btn-primary" style="font-weight:bold;" type="button" onclick="getLocation()">Verify Location</button>
 											<button id="btnPause"  class="btn btn-large btn-block" type="button">												<i class="icon-pause" ></i>
 												&nbsp;&nbsp;END SESSION
 											</button>
+<<<<<<< HEAD:templates/session.html
 											<a href="{{url_for('feedback')}}">Continue</a>
                                       <h3 id="er"></h3>
 
 
+=======
+                                      <h3 id="er"></h3>
+										
+										
+>>>>>>> cb8d22ec40053e8e0731cd66472973c34f61495c:HTML TMP/session.html
 									</div>
 								</div>
 							</div>
@@ -75,14 +96,22 @@
 			<!--
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 			 -->
+<<<<<<< HEAD:templates/session.html
 			<script type="text/javascript" src="{{url_for('static',filename='js1/jquery.1.9.1.min.js')}}"></script>
 			<script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
 			<script src="{{url_for('static',filename='js/custom.js')}}"></script>
 			<script src="{{url_for('static',filename='js/jquery.fittext.js')}}"></script>
+=======
+			<script type="text/javascript" src="js/jquery.1.9.1.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/custom.js"></script>
+			<script src="js/jquery.fittext.js"></script>
+>>>>>>> cb8d22ec40053e8e0731cd66472973c34f61495c:HTML TMP/session.html
             <script>
           function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+<<<<<<< HEAD:templates/session.html
 
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
@@ -103,6 +132,28 @@ function showPosition(position) {
 }
 
 
+=======
+    
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  if(document.getElementById("ck").innerHTML=="En")
+    {
+     	document.getElementById("er").innerHTML="Sorry your endlocation did not match the event location your contribution wont be counted"; 
+    } 
+  if(12.9334205<position.coords.latitude<12.9534205)
+{
+  document.getElementById("btnStart").disabled = false;
+  document.getElementById("ck").innerHTML="En";
+}
+  
+}
+
+          
+>>>>>>> cb8d22ec40053e8e0731cd66472973c34f61495c:HTML TMP/session.html
           </script>
 			<script type="text/javascript">
 			$(document).ready(function(){
@@ -229,5 +280,14 @@ function showPosition(position) {
 				});
 			});
 			</script>
+<<<<<<< HEAD:templates/session.html
+=======
+		
+	</body></html>
+
+
+
+
+>>>>>>> cb8d22ec40053e8e0731cd66472973c34f61495c:HTML TMP/session.html
 
 	</body></html>

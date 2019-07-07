@@ -58,3 +58,24 @@ div {
 </div>
 </body>
 </html>
+<?php 
+// Start session
+session_start(); 
+
+// Username and password
+$ID = "admin@gmail.com";
+$pass = "123456";
+
+if (isset($_POST["username"]) && isset($_POST["password"])) { 
+
+    if ($_POST["username"] === $ID && $_POST["password"] === $pass) { 
+    
+    $_SESSION["inloggedin"] = true; 
+
+    header("Location: start.php"); 
+    exit; 
+    } 
+        // Wrong login - message
+        else {$wrong = "Bad ID and password, the system could not log you in";} 
+}
+?> 

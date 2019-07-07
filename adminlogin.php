@@ -4,7 +4,9 @@
     <title>ADMIN - DASHBOARD</title>
 <style>
 body {
-   background-color: #aaaaaa;
+  background-image: url("banner.jpg");
+  background-repeat: no-repeat , repeat;
+  background-size: cover;
 }
 ul {
     list-style-type: none;
@@ -67,12 +69,13 @@ margin-top: 200px;
     
 <ul>
     <center>
-        <li><a href="createevent.php">Create Event</a></li>
+        <li><a href="createevent.html">Create Event</a></li>
   <li><a href="ongoing.php">Ongoing Event</a></li>
-  <li><a href="volunteer.php">All Events</a></li>
-  <li><a href="review_schools.php">All Volunteers</a></li>
-  <li><a href="review_schools.php">Volunteers Request</a></li>
-  <li><a href="data.php">Report Generation</a></li>
+  <li><a href="allevent.php">All Events</a></li>
+  <li><a href="volunteer.php">All Volunteers</a></li>
+  <li><a href="request.html">Volunteers Request</a></li>
+  <li><a href="report1.php">Report Generation</a></li>
+  <li><a href="plan.html">Things to do</a></li>
   <li><a href="logout.php">Logout</a></li>
 </center>
 </ul>
