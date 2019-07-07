@@ -18,7 +18,7 @@ input[type=text], select, textarea {
 }
 
 input[type=submit] {
-  background-color: #aaaaaa;
+  background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -44,10 +44,10 @@ input[type=submit]:hover {
 <div class="container">
   <form action="adminlogin.php" method="post" enctype="multipart/form-data">
     <label for="fname">Name of the Event</label>
-    <input type="text" id="fname" name="name" placeholder="name of the event..">
+    <input type="text" id="name" name="fname" placeholder="name of the event..">
 
     <label for="date">Date</label>
-    <input type="date" id="edate" name="date" placeholder="Date of the event..">
+    <input type="date" id="date" name="date" placeholder="Date of the event..">
     <br>
     <br>
     <label for="location">Location</label>
@@ -78,48 +78,23 @@ input[type=submit]:hover {
 </body>
 </html>
 <?php
-$servername = "localhost";
-$username = "";
-$password = "";
-$dbname = "dbcon";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "UPDATE event SET name='Doe'";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $conn->error;
+session_start();
+if(isset($_SESSION["POST"])){
+session_destroy();
 }
-
-$conn->close();
-?>
-<?php
-$servername = "localhost";
-$username = "";
-$password = "";
-$dbname = "dbcon";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "UPDATE event SET name='Doe'";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $conn->error;
+include_once 'amisha.php';
+//$ref=@$_GET['q'];
+$name = $_POST["fname"];
+$result = mysqli_query($con,"INSERT event ('name') VALUES ($name)") or die('Error');
+$count=mysqli_num_rows($result);
+if($count==1){
+while($row = mysqli_fetch_array($result)) {
+$name = $row['fname'];
 }
-
-$conn->close();
+$_SESSION["fname"] = $name;
+}
+if(isset($_SESSION["fname"]))
+header("location:admin_homepage.html");
+else
+echo "<h1 style='color:red'>wrong username or password</h1>";
 ?>
